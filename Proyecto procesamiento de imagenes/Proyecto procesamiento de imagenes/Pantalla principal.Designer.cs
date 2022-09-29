@@ -38,6 +38,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.filtrosDeImagenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrosDeVideosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deteccionDeCamaraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wmpCargarVideo = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpVideoFinal = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnDescargar = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.lblFiltroGaussiano = new System.Windows.Forms.Label();
             this.tbGaussiano = new System.Windows.Forms.TrackBar();
             this.btnFiltroMaximo = new System.Windows.Forms.Button();
-            this.deteccionDeCamaraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHistograma = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCargarImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenFinal)).BeginInit();
@@ -68,9 +68,9 @@
             this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCargar.Location = new System.Drawing.Point(184, 321);
+            this.btnCargar.Location = new System.Drawing.Point(147, 483);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(129, 36);
+            this.btnCargar.Size = new System.Drawing.Size(442, 36);
             this.btnCargar.TabIndex = 0;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
@@ -81,7 +81,7 @@
             this.pbCargarImagen.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbCargarImagen.Location = new System.Drawing.Point(147, 64);
             this.pbCargarImagen.Name = "pbCargarImagen";
-            this.pbCargarImagen.Size = new System.Drawing.Size(200, 251);
+            this.pbCargarImagen.Size = new System.Drawing.Size(442, 413);
             this.pbCargarImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCargarImagen.TabIndex = 1;
             this.pbCargarImagen.TabStop = false;
@@ -106,9 +106,9 @@
             // pbImagenFinal
             // 
             this.pbImagenFinal.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pbImagenFinal.Location = new System.Drawing.Point(369, 64);
+            this.pbImagenFinal.Location = new System.Drawing.Point(595, 64);
             this.pbImagenFinal.Name = "pbImagenFinal";
-            this.pbImagenFinal.Size = new System.Drawing.Size(200, 251);
+            this.pbImagenFinal.Size = new System.Drawing.Size(421, 413);
             this.pbImagenFinal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagenFinal.TabIndex = 5;
             this.pbImagenFinal.TabStop = false;
@@ -123,7 +123,7 @@
             this.deteccionDeCamaraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(601, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1028, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -143,22 +143,30 @@
             this.filtrosDeVideosToolStripMenuItem.Text = "Filtros de videos";
             this.filtrosDeVideosToolStripMenuItem.Click += new System.EventHandler(this.filtrosDeVideosToolStripMenuItem_Click);
             // 
+            // deteccionDeCamaraToolStripMenuItem
+            // 
+            this.deteccionDeCamaraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.deteccionDeCamaraToolStripMenuItem.Name = "deteccionDeCamaraToolStripMenuItem";
+            this.deteccionDeCamaraToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.deteccionDeCamaraToolStripMenuItem.Text = "Deteccion de camara";
+            this.deteccionDeCamaraToolStripMenuItem.Click += new System.EventHandler(this.deteccionDeCamaraToolStripMenuItem_Click);
+            // 
             // wmpCargarVideo
             // 
             this.wmpCargarVideo.Enabled = true;
             this.wmpCargarVideo.Location = new System.Drawing.Point(147, 64);
             this.wmpCargarVideo.Name = "wmpCargarVideo";
             this.wmpCargarVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpCargarVideo.OcxState")));
-            this.wmpCargarVideo.Size = new System.Drawing.Size(200, 251);
+            this.wmpCargarVideo.Size = new System.Drawing.Size(442, 413);
             this.wmpCargarVideo.TabIndex = 7;
             // 
             // wmpVideoFinal
             // 
             this.wmpVideoFinal.Enabled = true;
-            this.wmpVideoFinal.Location = new System.Drawing.Point(369, 64);
+            this.wmpVideoFinal.Location = new System.Drawing.Point(595, 64);
             this.wmpVideoFinal.Name = "wmpVideoFinal";
             this.wmpVideoFinal.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpVideoFinal.OcxState")));
-            this.wmpVideoFinal.Size = new System.Drawing.Size(200, 251);
+            this.wmpVideoFinal.Size = new System.Drawing.Size(421, 413);
             this.wmpVideoFinal.TabIndex = 8;
             // 
             // btnDescargar
@@ -168,9 +176,9 @@
             this.btnDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDescargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescargar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDescargar.Location = new System.Drawing.Point(402, 321);
+            this.btnDescargar.Location = new System.Drawing.Point(595, 483);
             this.btnDescargar.Name = "btnDescargar";
-            this.btnDescargar.Size = new System.Drawing.Size(129, 36);
+            this.btnDescargar.Size = new System.Drawing.Size(421, 36);
             this.btnDescargar.TabIndex = 9;
             this.btnDescargar.Text = "Descargar";
             this.btnDescargar.UseVisualStyleBackColor = false;
@@ -242,21 +250,13 @@
             this.btnFiltroMaximo.Text = "Filtro maximo";
             this.btnFiltroMaximo.UseVisualStyleBackColor = false;
             // 
-            // deteccionDeCamaraToolStripMenuItem
-            // 
-            this.deteccionDeCamaraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.deteccionDeCamaraToolStripMenuItem.Name = "deteccionDeCamaraToolStripMenuItem";
-            this.deteccionDeCamaraToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
-            this.deteccionDeCamaraToolStripMenuItem.Text = "Deteccion de camara";
-            this.deteccionDeCamaraToolStripMenuItem.Click += new System.EventHandler(this.deteccionDeCamaraToolStripMenuItem_Click);
-            // 
             // btnHistograma
             // 
             this.btnHistograma.BackColor = System.Drawing.Color.BlueViolet;
             this.btnHistograma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHistograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistograma.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnHistograma.Location = new System.Drawing.Point(12, 334);
+            this.btnHistograma.Location = new System.Drawing.Point(12, 490);
             this.btnHistograma.Name = "btnHistograma";
             this.btnHistograma.Size = new System.Drawing.Size(129, 23);
             this.btnHistograma.TabIndex = 16;
@@ -269,7 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(601, 369);
+            this.ClientSize = new System.Drawing.Size(1028, 549);
             this.Controls.Add(this.btnHistograma);
             this.Controls.Add(this.btnFiltroMaximo);
             this.Controls.Add(this.tbGaussiano);

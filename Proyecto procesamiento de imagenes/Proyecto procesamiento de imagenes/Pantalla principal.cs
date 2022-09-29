@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_procesamiento_de_imagenes.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,9 @@ namespace Proyecto_procesamiento_de_imagenes
         {
             InitializeComponent();
         }
-
         private void btnCargar_Click(object sender, EventArgs e)
         {
+
             if (!bandera)
             {
                 try
@@ -28,12 +29,17 @@ namespace Proyecto_procesamiento_de_imagenes
                     if (ofdCargarImagen.ShowDialog() == DialogResult.OK)
                     {
                         string imagen = ofdCargarImagen.FileName;
-                        pbCargarImagen.Image = Image.FromFile(imagen);
+                        Bitmap bitmapImagen = new Bitmap(imagen);
+                        Bitmap bitmapResultante = new Bitmap(imagen);
+                        pbCargarImagen.Image = bitmapImagen;
+                        BitmapConverter bitmapConverter = new BitmapConverter(bitmapResultante);
+                        Bitmap bitmapFiltrado = bitmapConverter.FilterMedia();
+                        pbImagenFinal.Image = bitmapFiltrado;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+                    MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido " + ex);
                 }
             }
             if (bandera)
@@ -67,7 +73,6 @@ namespace Proyecto_procesamiento_de_imagenes
             bandera = false;
             lblTitulo.Text = "Filtrado de imagenes";
         }
-
         private void filtrosDeVideosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pbCargarImagen.Visible = false;
@@ -83,7 +88,6 @@ namespace Proyecto_procesamiento_de_imagenes
             bandera = true;
             lblTitulo.Text = "Filtrado de videos";
         }
-
         private void filtrosDeImagenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             wmpCargarVideo.Visible = false;
@@ -99,34 +103,30 @@ namespace Proyecto_procesamiento_de_imagenes
             bandera = false;
             lblTitulo.Text = "Filtrado de imagenes";
         }
-
         private void btnHistograma_Click(object sender, EventArgs e)
         {
             Histograma histogramaForm = new Histograma();
             histogramaForm.Show();
         }
-
         private void deteccionDeCamaraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Deteccion_de_camara deteccionDeCamaraForm = new Deteccion_de_camara();
             deteccionDeCamaraForm.ShowDialog();
         }
-
-
-        //private void btnCargarVideo_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (ofdCargarVideo.ShowDialog() == DialogResult.OK)
-        //        {
-        //            string video = ofdCargarVideo.FileName;
-        //            wmpCargarVideo.URL = video;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("El archivo seleccionado no es un tipo de video válido");
-        //    }
-        //}
+        private void btnCargarVideo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ofdCargarVideo.ShowDialog() == DialogResult.OK)
+                {
+                    string video = ofdCargarVideo.FileName;
+                    wmpCargarVideo.URL = video;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de video válido " + ex);
+            }
+        }
     }
 }
