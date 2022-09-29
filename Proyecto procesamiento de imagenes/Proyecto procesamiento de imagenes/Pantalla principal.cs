@@ -30,11 +30,7 @@ namespace Proyecto_procesamiento_de_imagenes
                     {
                         string imagen = ofdCargarImagen.FileName;
                         Bitmap bitmapImagen = new Bitmap(imagen);
-                        Bitmap bitmapResultante = new Bitmap(imagen);
                         pbCargarImagen.Image = bitmapImagen;
-                        BitmapConverter bitmapConverter = new BitmapConverter(bitmapResultante);
-                        Bitmap bitmapFiltrado = bitmapConverter.FilterMedia();
-                        pbImagenFinal.Image = bitmapFiltrado;
                     }
                 }
                 catch (Exception ex)
@@ -126,6 +122,80 @@ namespace Proyecto_procesamiento_de_imagenes
             catch (Exception ex)
             {
                 MessageBox.Show("El archivo seleccionado no es un tipo de video válido " + ex);
+            }
+        }
+
+        private void btnFiltroMedia_Click(object sender, EventArgs e)
+        {
+            if (!bandera)
+            {
+                try
+                {
+                    string imagen = ofdCargarImagen.FileName;
+
+                    Bitmap bitmapResultante = new Bitmap(imagen);
+                    BitmapConverter bitmapConverter = new BitmapConverter(bitmapResultante);
+                    Bitmap bitmapFiltrado = bitmapConverter.FilterMedia();
+                    pbImagenFinal.Image = bitmapFiltrado;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido " + ex);
+                }
+            }
+
+        }
+
+        private void btnFiltroMediana_Click(object sender, EventArgs e)
+        {
+            if (!bandera)
+            {
+                try
+                {
+                    string imagen = ofdCargarImagen.FileName;
+
+                    Bitmap bitmapResultante = new Bitmap(imagen);
+                    BitmapConverter bitmapConverter = new BitmapConverter(bitmapResultante);
+                    Bitmap bitmapFiltrado = bitmapConverter.FilterMediana();
+                    pbImagenFinal.Image = bitmapFiltrado;
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido " + ex);
+                }
+            }
+        }
+
+        private void btnFiltroMediaPonderada_Click(object sender, EventArgs e)
+        {
+            if (!bandera)
+            {
+                try
+                {
+                    string imagen = ofdCargarImagen.FileName;
+
+                    Bitmap bitmapResultante = new Bitmap(imagen);
+                    BitmapConverter bitmapConverter = new BitmapConverter(bitmapResultante);
+                    byte valorCentral = 0;
+                    Byte.TryParse( txtMediaPonderada.Text.ToString(), out valorCentral);
+                    if (valorCentral > 0 && valorCentral <= 255)
+                    {
+                        Bitmap bitmapFiltrado = bitmapConverter.FilterMediaPonderada(valorCentral);
+                        pbImagenFinal.Image = bitmapFiltrado;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Solo valores mayores que cero y menores que 256 y sin punto flotante permitidos");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido " + ex);
+                }
             }
         }
     }
