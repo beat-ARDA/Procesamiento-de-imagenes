@@ -73,3 +73,4 @@ C:\Users\e-arduron\Desktop\MIO\Sem Ago-Dic 2022\Procesamiento\Procesamiento-de-i
 C:\Users\e-arduron\Desktop\MIO\Sem Ago-Dic 2022\Procesamiento\Procesamiento-de-imagenes\Proyecto procesamiento de imagenes\Proyecto procesamiento de imagenes\obj\Debug\Proyecto procesamiento de imagenes.csproj.CopyComplete
 C:\Users\e-arduron\Desktop\MIO\Sem Ago-Dic 2022\Procesamiento\Procesamiento-de-imagenes\Proyecto procesamiento de imagenes\Proyecto procesamiento de imagenes\obj\Debug\Proyecto procesamiento de imagenes.exe
 C:\Users\e-arduron\Desktop\MIO\Sem Ago-Dic 2022\Procesamiento\Procesamiento-de-imagenes\Proyecto procesamiento de imagenes\Proyecto procesamiento de imagenes\obj\Debug\Proyecto procesamiento de imagenes.pdb
+C:\Users\e-arduron\Desktop\MIO\Sem Ago-Dic 2022\Procesamiento\Procesamiento-de-imagenes\Proyecto procesamiento de imagenes\Proyecto procesamiento de imagenes\obj\Debug\Proyecto_procesamiento_de_imagenes.MediaPonderadaParametros.resources

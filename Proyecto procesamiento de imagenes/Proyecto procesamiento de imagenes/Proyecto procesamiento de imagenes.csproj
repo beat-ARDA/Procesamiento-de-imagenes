@@ -70,6 +70,12 @@
     <Compile Include="Histograma.Designer.cs">
       <DependentUpon>Histograma.cs</DependentUpon>
     </Compile>
+    <Compile Include="MediaPonderadaParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MediaPonderadaParametros.Designer.cs">
+      <DependentUpon>MediaPonderadaParametros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantalla principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Histograma.resx">
       <DependentUpon>Histograma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MediaPonderadaParametros.resx">
+      <DependentUpon>MediaPonderadaParametros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla principal.resx">
       <DependentUpon>Pantalla principal.cs</DependentUpon>
