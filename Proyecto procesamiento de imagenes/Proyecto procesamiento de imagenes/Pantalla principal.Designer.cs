@@ -42,24 +42,25 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFiltroMediaPonderada = new System.Windows.Forms.Button();
             this.lblFiltroGaussiano = new System.Windows.Forms.Label();
-            this.tbGaussiano = new System.Windows.Forms.TrackBar();
-            this.btnFiltroMaximo = new System.Windows.Forms.Button();
+            this.tbFMAX = new System.Windows.Forms.TrackBar();
             this.btnHistograma = new System.Windows.Forms.Button();
-            this.txtGaussiano = new System.Windows.Forms.TextBox();
             this.tbFiltroMedia = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.tbFiltroMediana = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.wmpVideoFinal = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpCargarVideo = new AxWMPLib.AxWindowsMediaPlayer();
+            this.tbFMIN = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCargarImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenFinal)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGaussiano)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFMAX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbFiltroMedia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbFiltroMediana)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpVideoFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpCargarVideo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFMIN)).BeginInit();
             this.SuspendLayout();
             // 
             // ofdCargarImagen
@@ -186,34 +187,20 @@
             // 
             this.lblFiltroGaussiano.AutoSize = true;
             this.lblFiltroGaussiano.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltroGaussiano.Location = new System.Drawing.Point(28, 213);
+            this.lblFiltroGaussiano.Location = new System.Drawing.Point(35, 246);
             this.lblFiltroGaussiano.Name = "lblFiltroGaussiano";
-            this.lblFiltroGaussiano.Size = new System.Drawing.Size(96, 13);
+            this.lblFiltroGaussiano.Size = new System.Drawing.Size(80, 13);
             this.lblFiltroGaussiano.TabIndex = 13;
-            this.lblFiltroGaussiano.Text = "Filtro gaussiano";
+            this.lblFiltroGaussiano.Text = "Filtro maximo";
             // 
-            // tbGaussiano
+            // tbFMAX
             // 
-            this.tbGaussiano.Location = new System.Drawing.Point(12, 229);
-            this.tbGaussiano.Maximum = 4;
-            this.tbGaussiano.Name = "tbGaussiano";
-            this.tbGaussiano.Size = new System.Drawing.Size(129, 45);
-            this.tbGaussiano.TabIndex = 14;
-            this.tbGaussiano.Scroll += new System.EventHandler(this.tbGaussiano_Scroll);
-            // 
-            // btnFiltroMaximo
-            // 
-            this.btnFiltroMaximo.BackColor = System.Drawing.Color.BlueViolet;
-            this.btnFiltroMaximo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFiltroMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltroMaximo.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFiltroMaximo.Location = new System.Drawing.Point(12, 177);
-            this.btnFiltroMaximo.Name = "btnFiltroMaximo";
-            this.btnFiltroMaximo.Size = new System.Drawing.Size(129, 23);
-            this.btnFiltroMaximo.TabIndex = 15;
-            this.btnFiltroMaximo.Text = "Filtro maximo";
-            this.btnFiltroMaximo.UseVisualStyleBackColor = false;
-            this.btnFiltroMaximo.Click += new System.EventHandler(this.btnFiltroMaximo_Click);
+            this.tbFMAX.Location = new System.Drawing.Point(12, 262);
+            this.tbFMAX.Maximum = 4;
+            this.tbFMAX.Name = "tbFMAX";
+            this.tbFMAX.Size = new System.Drawing.Size(129, 45);
+            this.tbFMAX.TabIndex = 14;
+            this.tbFMAX.Scroll += new System.EventHandler(this.tbFMAX_Scroll);
             // 
             // btnHistograma
             // 
@@ -221,20 +208,13 @@
             this.btnHistograma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHistograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistograma.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnHistograma.Location = new System.Drawing.Point(12, 490);
+            this.btnHistograma.Location = new System.Drawing.Point(12, 483);
             this.btnHistograma.Name = "btnHistograma";
-            this.btnHistograma.Size = new System.Drawing.Size(129, 23);
+            this.btnHistograma.Size = new System.Drawing.Size(129, 36);
             this.btnHistograma.TabIndex = 16;
             this.btnHistograma.Text = "Histograma";
             this.btnHistograma.UseVisualStyleBackColor = false;
             this.btnHistograma.Click += new System.EventHandler(this.btnHistograma_Click);
-            // 
-            // txtGaussiano
-            // 
-            this.txtGaussiano.Location = new System.Drawing.Point(12, 267);
-            this.txtGaussiano.Name = "txtGaussiano";
-            this.txtGaussiano.Size = new System.Drawing.Size(129, 20);
-            this.txtGaussiano.TabIndex = 18;
             // 
             // tbFiltroMedia
             // 
@@ -292,20 +272,39 @@
             this.wmpCargarVideo.Size = new System.Drawing.Size(442, 413);
             this.wmpCargarVideo.TabIndex = 7;
             // 
+            // tbFMIN
+            // 
+            this.tbFMIN.Location = new System.Drawing.Point(12, 198);
+            this.tbFMIN.Maximum = 4;
+            this.tbFMIN.Name = "tbFMIN";
+            this.tbFMIN.Size = new System.Drawing.Size(129, 45);
+            this.tbFMIN.TabIndex = 24;
+            this.tbFMIN.Scroll += new System.EventHandler(this.tbFMIN_Scroll);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(38, 182);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Filtro minimo";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1043, 549);
+            this.ClientSize = new System.Drawing.Size(1043, 529);
+            this.Controls.Add(this.tbFMIN);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbFiltroMediana);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbFiltroMedia);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtGaussiano);
             this.Controls.Add(this.btnHistograma);
-            this.Controls.Add(this.btnFiltroMaximo);
-            this.Controls.Add(this.tbGaussiano);
+            this.Controls.Add(this.tbFMAX);
             this.Controls.Add(this.lblFiltroGaussiano);
             this.Controls.Add(this.btnFiltroMediaPonderada);
             this.Controls.Add(this.lblTitulo);
@@ -326,11 +325,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenFinal)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGaussiano)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFMAX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbFiltroMedia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbFiltroMediana)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpVideoFinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpCargarVideo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFMIN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,14 +353,14 @@
         private System.Windows.Forms.ToolStripMenuItem deteccionDeCamaraToolStripMenuItem;
         private System.Windows.Forms.Button btnFiltroMediaPonderada;
         private System.Windows.Forms.Label lblFiltroGaussiano;
-        private System.Windows.Forms.TrackBar tbGaussiano;
-        private System.Windows.Forms.Button btnFiltroMaximo;
+        private System.Windows.Forms.TrackBar tbFMAX;
         private System.Windows.Forms.Button btnHistograma;
-        private System.Windows.Forms.TextBox txtGaussiano;
         private System.Windows.Forms.TrackBar tbFiltroMedia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar tbFiltroMediana;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TrackBar tbFMIN;
+        private System.Windows.Forms.Label label3;
     }
 }
 
